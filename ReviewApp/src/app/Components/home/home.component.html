@@ -1,0 +1,56 @@
+<div *ngIf="isLoggedIn" class="container btn-signout d-flex justify-content-end float-right">
+    <button type="button" class="btn btn btn-outline-danger" (click)="onSignOut()">Sign out</button>
+</div>
+
+<div class="div-search container d-flex align-items-end flex-column">
+    <div class="container-fluid" style="text-align:center">
+        <div class="input-group search-form">
+            <input type="text" [(ngModel)]="movieName" name="movieName" class="form-control" placeholder="Search for a movie to review" aria-label="Search for a movie to review">
+            <div class="input-group-append">
+                <button class="btn btn-outline-dark" type="button" (click)="searchMovie()"><i class="fa fa-search" ></i></button>
+            </div>
+        </div>
+        <!-- Error messages -->
+        <div class="alert" *ngIf='serverErrorMessages' style="margin: 10px;">
+            {{serverErrorMessages}}
+        </div>
+
+        <div class="movie" *ngIf='(movie | keyvalue)?.length'>
+            <h5>
+                {{ movie.title }}
+
+                <span> - {{ movie.year }} - ({{ movie.genre }}) </span>
+            </h5>
+
+            <span>IMDb <i class="fa fa-star"></i> - {{movie.imdbRating}}</span>
+
+            <br/>
+            <br/>
+            <div class="container">
+                <img class="movie-img" src="{{ movie.posterUrl }}" alt="movie-poster-img" />
+            </div>
+            <br>
+            <p>
+                {{ movie.plot }}
+            </p>
+            <p>
+                Director : {{ movie.director }}</p>
+            <p>
+                Cast : {{ movie.cast }}
+            </p>
+            <p>
+                Runtime : {{ movie.runtime }}
+            </p>
+            <div class="container center justify-content-end center">
+                <!--for delete-->
+                <button type="button" class="btn btn-outline-primary btn-review" (click)="onReviewClick(movie)">
+                    Review It!
+                  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="text-align:center">
+    <app-reviews></app-reviews>
+</div>

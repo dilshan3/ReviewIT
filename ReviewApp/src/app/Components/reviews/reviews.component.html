@@ -1,0 +1,8 @@
+<div class='container' style="padding: 50px;">
+    <ng-container *ngIf="!this.isArrayEmpty(); else emtBlog">
+        <app-review *ngFor="let review of this.reviewsService.reviewArray" [review]="review" (click)="onClickReview(review._id)"></app-review>
+    </ng-container>
+    <ng-template #emtBlog>
+        <p>No reviews to view</p>
+    </ng-template>
+</div>

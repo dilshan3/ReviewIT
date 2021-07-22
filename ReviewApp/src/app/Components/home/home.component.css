@@ -1,0 +1,53 @@
+html {
+    background-color: #ebebeb;
+}
+
+.search-form {
+    padding-top: 35px;
+}
+
+.btn-signout {
+    padding-top: 15px;
+}
+
+.movie {
+    display: inline-block;
+    width: 600px;
+    height: 780px;
+    cursor: pointer;
+    padding: 8px;
+    box-shadow: 2px 0px 13px 7px rgba(31, 31, 31, 0.712);
+    margin: 60px;
+    background-color: rgb(73, 70, 70);
+    color: white;
+}
+
+.span {
+    color: grey;
+}
+
+.movie-img {
+    width: 350px;
+    height: 380px;
+    box-shadow: 2px 0px 13px 7px rgba(51, 50, 50, 0.712);
+}
+
+.p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: white;
+}
+
+.btn-review {
+    float: center;
+}
+
+.fa-star {
+    color: #ffe70a;
+}
+
+.fa-star-o {
+    color: #000;
+}

@@ -1,0 +1,26 @@
+<div class="review">
+    <h5>
+        {{ review.movie }}
+    </h5>
+    <span class="span">Added date: {{ review.addedDate | date:'medium'}} </span>
+    <br>
+    <br>
+    <div class="container">
+        <img class="img" src="{{ review.posterUrl }}" alt="movie-img" style="position:relative;" />
+    </div>
+    <br>
+    <p class="p-review">
+        "{{ review.content }}"
+    </p>
+    <p class="p-review">
+        Reviewer - {{ review.reviewer }}
+    </p>
+    <span> <i [ngClass]="icon"></i><p [ngClass]="textcolor">{{ sentiment }}</p></span>
+
+    <div *ngIf="review.reviewer==this.userService.selectedUser.name" class="container delete-post center justify-content-end center">
+        <!--for delete-->
+        <button type="button" class="btn btn-outline-danger btn-del" (click)="deleteReview(review._id);$event.stopPropagation()">
+          Delete blog
+        </button>
+    </div>
+</div>

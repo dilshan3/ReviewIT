@@ -1,0 +1,34 @@
+<div class="container-main ">
+    <div *ngIf="isLoggedIn" class="container btn-signout d-flex justify-content-end float-right">
+        <button type="button" class="btn btn btn-outline-danger" (click)="onSignOut()">Sign out</button>
+    </div>
+
+    <div class="container">
+        <div class="container  d-flex justify-content-start">
+            <span>
+            <button type="button " class="btn btn-outline-dark home-btn" (click)="onHomeClick()"><i class="fa fa-home"></i></button>
+
+            <button type="button" *ngIf="this.reviewsService.review.reviewer==this.userService.selectedUser.name" class="btn btn-outline-primary del-btn" (click)="onEditClick()"><i class="fa fa-pencil"></i> Edit Review</button>
+            </span>
+        </div>
+        <div class="d-flex justify-content-center m-2">
+            <h1> {{ this.reviewsService.review.movie || null }} </h1>
+        </div>
+        <div class="div d-flex justify-content-center m-2">
+            <span> Review added on: {{ this.reviewsService.review.addedDate || null | date }} </span>
+        </div>
+        <div class="image-container d-flex justify-content-center mb-5">
+            <img [src]="this.reviewsService.review.posterUrl" alt="blog-cover">
+        </div>
+        <div class="desc-container d-flex justify-content-center">
+            <p> "{{ this.reviewsService.review.content }}"" </p>
+        </div>
+
+        <p class="p-review d-flex justify-content-center">
+            Reviewer - {{ this.reviewsService.review.reviewer }}
+        </p>
+        <span class="d-flex justify-content-center"><i [ngClass]="icon"></i></span>
+        <span class="d-flex justify-content-center">  <p [ngClass]="textcolor"> {{ sentiment }}</p></span>
+        <br>
+    </div>
+</div>

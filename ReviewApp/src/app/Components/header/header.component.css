@@ -1,0 +1,12 @@
+.top-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #312f2f;
+}
+
+.top-header h1 {
+    padding-top: 10px;
+    color: #fff;
+    text-align: center;
+}

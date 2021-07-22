@@ -1,0 +1,39 @@
+.container-main {
+    margin: 60px;
+    border: thin;
+}
+
+.fa-thumbs-up {
+    color: #1ca46b;
+}
+
+.fa-thumbs-down {
+    color: #6e0a1a;
+}
+
+.fa-meh-o {
+    color: #ffa80f
+}
+
+.positive {
+    font-weight: bold;
+    color: #1ca46b;
+}
+
+.negative {
+    font-weight: bold;
+    color: #6e0a1a;
+}
+
+.neutral {
+    font-weight: bold;
+    color: #ffa80f;
+}
+
+.home-btn {
+    margin: 2px;
+}
+
+.del-btn {
+    margin: 2px;
+}

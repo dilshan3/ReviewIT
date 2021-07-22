@@ -1,0 +1,63 @@
+.review {
+    display: inline-block;
+    width: 420px;
+    height: 800px;
+    cursor: pointer;
+    padding: 7px;
+    border-style: solid;
+    margin: 40px;
+    background-color: #ececec;
+    color: black;
+}
+
+.span {
+    color: #eb2e47;
+    font-weight: bold;
+}
+
+.img {
+    width: 380px;
+    height: 420px;
+}
+
+.p-review {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-del {
+    float: right
+}
+
+.fa-star {
+    color: #ffec3d;
+}
+
+.fa-thumbs-up {
+    color: #1ca46b;
+}
+
+.fa-thumbs-down {
+    color: #6e0a1a;
+}
+
+.fa-meh-o {
+    color: #ffa80f
+}
+
+.positive {
+    font-weight: bold;
+    color: #1ca46b;
+}
+
+.negative {
+    font-weight: bold;
+    color: #6e0a1a;
+}
+
+.neutral {
+    font-weight: bold;
+    color: #ffa80f;
+}
