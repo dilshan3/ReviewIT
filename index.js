@@ -35,7 +35,7 @@ app.use('/users', userController);
 app.use('/movies', movieController);
 app.use('/reviews', reviewController);
 
-app.get("*", (rew, res) => {
+app.get("/*", (rew, res) => {
     res.sendFile(path.join(__dirname, "public/index.html"))
 })
 
