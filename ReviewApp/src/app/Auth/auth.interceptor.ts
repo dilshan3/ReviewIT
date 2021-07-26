@@ -20,7 +20,8 @@ export class AuthInterceptor implements HttpInterceptor{
             
             const HEADERS = new HttpHeaders({
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
               });
             const clonedReq = req.clone({
                 headers: HEADERS                
