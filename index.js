@@ -30,7 +30,7 @@ app.use(passport.initialize());
 // });
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 app.use('/users', userController);
 app.use('/movies', movieController);
 app.use('/reviews', reviewController);
@@ -40,4 +40,4 @@ app.get("/*", (rew, res) => {
 })
 
 //Starting server
-app.listen(process.env.PORT, "0.0.0.0", () => console.log('Server started at port process.env.PORT'));
+app.listen(process.env.PORT, "0.0.0.0", () => console.log('Server started at port ' + process.env.PORT));
