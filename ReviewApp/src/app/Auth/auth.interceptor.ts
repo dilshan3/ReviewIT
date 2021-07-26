@@ -42,7 +42,8 @@ export class AuthInterceptor implements HttpInterceptor{
             const HEADERS = new HttpHeaders({
                 'content-type': 'application/x-www-form-urlencoded',
                 'x-rapidapi-key': '0465c52a0fmsh8d82c83a3c7bfcap1fd564jsnd265db683c2b',
-                'x-rapidapi-host': 'twinword-sentiment-analysis.p.rapidapi.com'
+                'x-rapidapi-host': 'twinword-sentiment-analysis.p.rapidapi.com',
+                'useQueryString': 'true'
               });
             const clonedReq = req.clone({
                 headers: HEADERS                
