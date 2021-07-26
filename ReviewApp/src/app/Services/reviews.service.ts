@@ -28,7 +28,9 @@ export class ReviewsService {
 
   /// Get review sentiment
   getReviewSentiment(review: string){
-    return this.http.post(environment.twinwordApiUrl, {text: review});
+    let body = new URLSearchParams();
+    body.set('text', review);
+    return this.http.post(environment.twinwordApiUrl, body);
   }
 
   /// Post new review
