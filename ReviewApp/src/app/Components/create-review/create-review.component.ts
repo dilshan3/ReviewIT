@@ -65,7 +65,7 @@ export class CreateReviewComponent implements OnInit {
         (res: any) => {
           var sentiment = res.result.type[0].toUpperCase() + res.result.type.slice(1);
           this.reviewForm.controls.sentiment.setValue(sentiment);
-          this.reviewsService.review.polarity = res.result.polarity;
+          this.reviewsService.review.polarity = res.result.score;
           this.reviewsService.review.sentiment = sentiment;
         }
       );

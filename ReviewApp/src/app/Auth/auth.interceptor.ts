@@ -37,6 +37,27 @@ export class AuthInterceptor implements HttpInterceptor{
                 )
             )
         }
+        else if(req.url.includes(environment.twinwordApiUrl)){
+            
+            const HEADERS = new HttpHeaders({
+                'content-type': 'application/x-www-form-urlencoded',
+                'x-rapidapi-key': '0465c52a0fmsh8d82c83a3c7bfcap1fd564jsnd265db683c2b',
+                'x-rapidapi-host': 'twinword-sentiment-analysis.p.rapidapi.com'
+              });
+            const clonedReq = req.clone({
+                headers: HEADERS                
+            });
+            return next.handle(clonedReq).pipe(
+                tap(
+                    event => {},
+                    err => {
+                        if(err.error.auth == false){
+                            this.router.navigateByUrl('/signin');
+                        }
+                    }
+                )
+            )
+        }
         else{
             const clonedReq = req.clone({
                 headers: req.headers.set("Authorization", "Bearer " + this.userService.getToken())
